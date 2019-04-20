@@ -1,0 +1,5 @@
+{
+  "require": {
+    "james-heinrich/getid3a": "1.9.*"
+  }
+}
