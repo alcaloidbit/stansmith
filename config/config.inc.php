@@ -4,6 +4,7 @@
 
 include dirname(__FILE__).'/../models/autoload.class.php';
 include dirname(__FILE__).'/settings.inc.php';
+include dirname(__FILE__).'/../vendor/autoload.php';
 
 // include getID3() library (can be in a different directory if full path is specified)
 // include dirname(__FILE__).'/../getID3-master/getid3/getid3.php';
