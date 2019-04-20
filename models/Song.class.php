@@ -99,7 +99,6 @@ class Song extends ObjectModel
 	{
 		$obj = new AudioInfo();
 		$infos = $obj->Info($this->path);
-
 		if( array_key_exists( 'format_name', $infos ))
 		{
 			switch($infos['format_name'])
