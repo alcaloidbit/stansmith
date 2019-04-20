@@ -1,0 +1,31 @@
+.instantsearch{
+	position: absolute;
+	display: none;
+	background:#FFF;
+	z-index: 1000;
+	padding: 10px;
+	border: 1px solid #FEFEFE;
+}
+
+.instantsearch ul{
+	list-style-type: none;
+	
+}
+
+
+.instantsearch:hover{
+	cursor: pointer;
+}
+
+.instantsearch ul li{
+padding: 5px;
+}
+
+.instantsearch ul li:hover{
+background-color: #eaeaea;
+}
+
+
+.ui-autocomplete{
+list-style-type: none;
+}

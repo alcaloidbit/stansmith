@@ -1,0 +1,18 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+body {
+  /* Margin bottom by footer height */
+  /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'Roboto', serif;
+  font-size: 13px;
+  margin-bottom: 75px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+
+}
+

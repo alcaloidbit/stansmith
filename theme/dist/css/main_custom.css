@@ -1,0 +1,69 @@
+#discogs_results {
+	position: relative;
+	background:#FFF;
+	z-index: 100000;
+	left:0;
+	display:none;  
+}
+#discogs_results .close{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+
+#discogs_results table{
+	font-size:12px;
+}
+
+.discogs-search{
+	cursor: pointer;
+	background-image: url('http://176.31.245.123/stansmith/views/discogsfavicon.jpg');
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.subtree{
+	display: none;
+}
+
+.items_list ul li{
+	list-style-type: none;
+	cursor: pointer;
+}
+.navbar-custom-menu a:hover{color:#FFF;}
+.navbar-custom-menu a{
+
+	color: #FFF;
+}
+
+.items_list ul li span{
+	margin: 0 5px;
+}
+
+.trigger{
+	display: inline-block;
+}
+
+p.lest{
+	margin-left: 20px;
+}
+
+#-nav{
+margin: 20px 0;
+}
+
+
+.album .action{
+	display:inline-block;
+}
+
+.action .form-control {
+display: inline-block;
+width:35%;
+}
+
+.album{
+	margin-top: 20px;
+}

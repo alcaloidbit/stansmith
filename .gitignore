@@ -1,0 +1,6 @@
+**/image/*
+/images/
+/music/
+/public/
+sftp-config.json
+.DS_Store
