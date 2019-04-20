@@ -1,5 +1,10 @@
 {
+  "name": "stansmith/stansmith",
+  "description": "Stansmith music library.",
+  "type": "project",
   "require": {
-    "james-heinrich/getid3a": "1.9.*"
+    "php": ">=5.3.10",
+    "james-heinrich/getid3": "1.9.*",
+    "ext-SimpleXML": "*"
   }
 }

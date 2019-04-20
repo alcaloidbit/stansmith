@@ -1,7 +1,7 @@
 <?php
 
 
-class XController extends Controller
+class IndexController extends Controller
 {
 	public function  __construct()
 	{
