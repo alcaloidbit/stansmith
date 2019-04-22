@@ -1,5 +1,10 @@
-<div id="wrapper" class="">
-<?php if(isset($artists)){ ?>
+<?php 
+
+use StanSmith\Core\Album;
+use StanSmith\Core\Tools;
+
+if(isset($artists)){ ?>
+
     <div id="sidebar-wrapper">
               <ul class="sidebar-nav ">
               <li class="sidebar-brand">
@@ -80,7 +85,7 @@
 <div class="pagination">
 	<!-- <a class=" next" href="http://176.31.245.123/stansmith/index.php?controller=x&action=ajaxGetNextHtml&p=<?php echo $next_page ?>">Next</a> -->
 
-	<a class=" next" href="http://176.31.245.123/stansmith/index.php?controller=x&action=ajaxGetNextJson&p=<?php echo $next_page ?>">Next</a>
+	<a class=" next" href="http://176.31.245.123/stansmith/index.php?controller=index&action=ajaxGetNextJson&p=<?php echo $next_page ?>">Next</a>
 	<!-- <img src="views/720.gif" id="preloader" alt=""> -->
 	<img src="views/252.gif" id="preloader" alt="">
 	<!-- <img src="views/ajax-loader-bluesquare.gif" id="preloader" alt=""> -->

@@ -2,7 +2,7 @@
 
 @ini_set('display_errors', 'on');
 
-include dirname(__FILE__).'/../models/autoload.class.php';
+// include dirname(__FILE__).'/../models/autoload.class.php';
 include dirname(__FILE__).'/settings.inc.php';
 include dirname(__FILE__).'/../vendor/autoload.php';
 
@@ -10,12 +10,12 @@ include dirname(__FILE__).'/../vendor/autoload.php';
 // include dirname(__FILE__).'/../getID3-master/getid3/getid3.php';
 
 
-Autoloader::register();
+// Autoloader::register();
 
 define('_ROOT_', realpath( dirname(__FILE__).'/..'));
 
-define('_MODELS_', _ROOT_.'/models/');
-define('_CONTROLLERS_', _ROOT_.'/controllers/');
+define('_MODELS_', _ROOT_.'/src/Core/');
+define('_CONTROLLERS_', _ROOT_.'/src/Controllers/');
 define('_VIEWS_', _ROOT_.'/views/');
 define('_ADMIN_VIEWS_', _VIEWS_.'/admin/');
 
