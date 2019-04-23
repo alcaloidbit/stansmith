@@ -200,7 +200,7 @@ $(function(){
 
 		console.log(match);
 		$.ajax({
-			url: 'index.php?controller=test&action=detail',
+			url: 'index.php?controller=index&action=detail',
 			type: 'GET',
 			data: {id_album: match[1]},
 			dataType: 'json',
