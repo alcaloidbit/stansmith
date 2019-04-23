@@ -1,7 +1,4 @@
-<?php
-
-namespace StanSmith\Core;
-
+<?php namespace StanSmith\Core; 
 use \StanSmith\Core\ObjectModel;
 use \StanSmith\Core\Validate;
 

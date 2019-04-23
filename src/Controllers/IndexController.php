@@ -34,7 +34,7 @@ use \StanSmith\Core\Tools as Tools;
 			$data['next_page'] = $p + 1;
 			$data['albums'] =  Album::getAlbums( 0, 12 ,'id_album', 'DESC');
 		}
-		$this->renderView( $data );
+                $this->renderView( $data );
 	}
 
 

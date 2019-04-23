@@ -3,6 +3,8 @@
 
 namespace StanSmith\Core;
 
+use \StanSmith\Core\HttpRequest;
+
 class Router {
 
   public function route()
@@ -31,17 +33,15 @@ class Router {
           $controller = $request->getValue('controller');
       }
 
-      $controller = ucfirst(strtolower($controller) );
-      $controllerClassName = $controller .'Controller' ;   // Build Controller Class Name
+      $controller = ucfirst(strtolower($controller));
+      $controllerClass =  $controller .'Controller' ;   // Build Controller Class Name
 
-
-      $controllerFile = _CONTROLLERS_ . $controllerClassName . '.php';  // Build Controller File ( autoload )
-
-      $fqControllerClassName = 'StanSmith\Controllers\\' . $controllerClassName ;
+      $controllerFile = _CONTROLLERS_ . $controllerClass . '.php';  // Build Controller File ( autoload )
 
       if (file_exists($controllerFile))
       {
-        $controller = new $fqControllerClassName();
+        $controllerClass = 'StanSmith\Controllers\\' . $controllerClass;
+        $controller = new $controllerClass();
         $controller->setRequest( $request );
         return $controller;
       }

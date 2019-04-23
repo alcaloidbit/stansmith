@@ -2,6 +2,7 @@
 
 namespace StanSmith\Core;
 use \StanSmith\Core\View;
+use \StanSmith\Core\HttpRequest;
 
 abstract Class Controller
 {
@@ -13,8 +14,7 @@ abstract Class Controller
 
 	public function setRequest( \StanSmith\Core\HttpRequest $request )
 	{
-
-		$this->request = $request;
+	    $this->request = $request;
 	}
 
 	public function executeAction(  $action )
@@ -37,17 +37,14 @@ abstract Class Controller
 	protected function renderView( $data = array() )
 	{
 		$controllerClass = get_Class( $this );
-$path = explode( '\\', $controllerClass);
-$controllerClass = array_pop($path);
+                $path = explode( '\\', $controllerClass);
+                $controllerClass = array_pop($path);
 		$controller = str_replace( 'Controller', '', $controllerClass );
 
 		$this->view = new View( $this->action,  $controller );
 
 		foreach ( $data as $key => $value )
-		{
-
-			$this->view->assign( $key, $value );
-		}
+                    $this->view->assign( $key, $value );
 
 		$this->view->generate();
 	}

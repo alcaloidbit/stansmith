@@ -24,7 +24,7 @@ class View
 
 
 	public function assign( $var, $value )
-    {
+        {
 	    if (!is_string($var) || is_numeric($var) || empty($var) )
 	    {
 	      throw new \InvalidArgumentException('Le nom de la variable doit être une chaine de caractère non nulle');
@@ -33,8 +33,6 @@ class View
 	    $this->vars[$var] = $value;
 	}
 
-	public function generate( )
-	{
 		$view = $this->generateFile();
 		echo $view;
 	}
