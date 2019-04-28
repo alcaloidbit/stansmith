@@ -11,12 +11,12 @@ class StanController extends Controller
     public function __construct()
     {
     }
-    
+
     public function display()
     {
-       $repo = new AlbumRepository();
-       $albums = $repo->findAll();
-       
-       $this->renderView($albums); 
+        $repo = new AlbumRepository();
+        $albums = $repo->findAll();
+
+        $this->renderView($albums); 
     }
 }
