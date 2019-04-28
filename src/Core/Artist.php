@@ -8,8 +8,6 @@ use \StanSmith\Core\Validate;
 
 class Artist extends ObjectModel
 {
-
-
 	/** @var string Name */
 	public $name;
 
@@ -21,7 +19,6 @@ class Artist extends ObjectModel
 
 	/** @var string Object last modification date */
 	public $date_upd;
-
 
 	public static $definition = array(
 		'table' => 'artist',
@@ -46,10 +43,10 @@ class Artist extends ObjectModel
 	 */
 	public static function getArtists( )
 	{
-		$results = Db::getInstance()->select( 'SELECT a.* FROM `artist` a INNER JOIN `album` b 
+		$results = Db::getInstance()->select( 'SELECT a.* FROM `artist` a INNER JOIN `album` b
 												ON a.`id_artist` = b.`id_artist` WHERE b.`deleted` IS NULL GROUP BY a.`id_artist` ORDER BY a.`name`' );
 		return $results;
-	}	
+	}
 
 
 	public static function getArtistsNbr()
