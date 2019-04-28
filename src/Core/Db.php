@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  *  To prevent SQL Injection, do 'NEVER TRUST USER INPUT' !!
  *  - Cast any user entry with (int) $_GET['id'] or intval( $_GET['id'] )
