@@ -14,6 +14,6 @@ class StanController extends Controller
     
     public function display()
     {
-
+       $this->renderView(); 
     }
 }
