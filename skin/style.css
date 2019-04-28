@@ -5,13 +5,16 @@ html {
 }
 .sidenav-main {
   position: fixed;
-       width: 260px;
+  width: 260px;
   height: 100%;
   top:0;
   z-index: 999;
   transition: .3s ease all;
 }
 
+#main {
+  padding-left: 280px;
+}
 .sidenav {
   width: inherit;
   top: 64px;
