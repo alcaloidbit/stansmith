@@ -15,7 +15,7 @@ include dirname(__FILE__).'/../vendor/autoload.php';
 define('_ROOT_', realpath( dirname(__FILE__).'/..'));
 
 define('_MODELS_', _ROOT_.'/src/Core/');
-define('_CONTROLLERS_', _ROOT_.'/src/Controllers/');
+define('_CONTROLLERS_', _ROOT_.'/src/Controller/');
 define('_VIEWS_', _ROOT_.'/views/');
 define('_ADMIN_VIEWS_', _VIEWS_.'/admin/');
 

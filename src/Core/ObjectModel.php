@@ -221,13 +221,13 @@ abstract class ObjectModel
 
 		if( !empty($data['validate'] ) )
 		{
-			if( !method_exists( 'Validate', $data['validate'] ))
-				throw new Exception( 'Methode  '.$data['validate'].' non trouvé dans la classe ' );
+			if( !method_exists( '\StanSmith\Core\Validate', $data['validate'] ))
+				throw new \Exception( 'Methode  '.$data['validate'].' non trouvé dans la classe ' );
 
 			if( !empty( $value ) )
 			{
 				$res = true;
-				if( !call_user_func( array( 'Validate', $data['validate'] ), $value ))
+				if( !call_user_func( array( '\StanSmith\Core\Validate', $data['validate'] ), $value ))
 					$res = false;
 				if( !$res )
 					return 'Property'.get_class( $this ).' -> '.$field.' is not Valid';

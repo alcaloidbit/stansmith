@@ -26,26 +26,29 @@ class AlbumRepository
     }
 
 
-    public function find($id)
+    public function find($id_album)
     {
         $stmt = $this->connection->prepare('
             SELECT * from `album`
             WHERE `id_album` = :id_album
         ');
-
+        
         $stmt->bindParam(':id_album', $id_album);
         $stmt->execute();
-
         $stmt->setFetchMode(PDO::FETCH_CLASS, '\StanSmith\Core\Model\AlbumModel');
         $object = $stmt->fetch();
         return $object;
     }
 
-    public function findAll()
+    
+    public function findAll($order_by='id_album', $order_way='DESC', $start=0, $limit=12)
     {
         $stmt = $this->connection->prepare('
-            SELECT * FROM `album`; 
+            SELECT * FROM `album` WHERE `deleted` IS NULL 
+            ORDER BY `'.$order_by.'` '.$order_way.'
+            LIMIT '.$start.', '.$limit.' 
         ');
+
         $stmt->execute();
 
         $stmt->setFetchMode(PDO::FETCH_CLASS, '\StanSmith\Core\Model\AlbumModel');

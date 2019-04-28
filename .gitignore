@@ -4,3 +4,7 @@
 /public/
 sftp-config.json
 .DS_Store
+tags
+*.jpg
+*.png
+*.gif

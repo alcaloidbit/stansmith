@@ -33,6 +33,8 @@ class View
 	    $this->vars[$var] = $value;
 	}
 
+	public function generate( )
+	{
 		$view = $this->generateFile();
 		echo $view;
 	}

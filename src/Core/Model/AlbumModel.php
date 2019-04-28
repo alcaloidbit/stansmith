@@ -2,7 +2,6 @@
 
 namespace StanSmith\Core\Model;
 
-
 class AlbumModel
 {
     public $id_album;
@@ -42,6 +41,11 @@ class AlbumModel
     public function getTitle()
     { 
         return $this->title;
+    }
+
+    public function getCover()
+    {
+                
     }
     
 }

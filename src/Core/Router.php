@@ -40,7 +40,7 @@ class Router {
 
       if (file_exists($controllerFile))
       {
-        $controllerClass = 'StanSmith\Controllers\\' . $controllerClass;
+        $controllerClass = 'StanSmith\Controller\\' . $controllerClass;
         $controller = new $controllerClass();
         $controller->setRequest( $request );
         return $controller;
