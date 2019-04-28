@@ -17,6 +17,6 @@ class StanController extends Controller
         $repo = new AlbumRepository();
         $albums = $repo->findAll();
 
-        $this->renderView($albums); 
+        $this->renderView(array('albums' => $albums)); 
     }
 }

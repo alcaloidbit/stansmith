@@ -1,6 +1,5 @@
 <?php
 
-
 namespace StanSmith\Controller;
 
 use \StanSmith\Core\Controller;
@@ -19,7 +18,6 @@ class IndexController extends Controller
     {
         if($this->request->paramExists('id_album'))
         {
-            // VERY TEMPORARY
             $data['albums'] = \Album::getAlbum($this->request->getValue('id_album'));
         }
         else
@@ -63,7 +61,6 @@ class IndexController extends Controller
 
         die(json_encode($data));
     }
-
 
 
     public function getArtistsList()
