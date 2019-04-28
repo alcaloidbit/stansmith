@@ -1,6 +1,7 @@
 
 
 <?php 
+d($albums);
     
     $html='';
     foreach($albums as $album) 
