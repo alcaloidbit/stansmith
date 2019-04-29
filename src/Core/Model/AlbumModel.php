@@ -77,19 +77,4 @@ class AlbumModel
         return $this->title;
     }
 
-    public function setSongs()
-    {
-        $data = Db::getInstance()->select('SELECT * FROM `song` WHERE `id_album` = '.$this->id.' ORDER BY `meta_track_number`, `title` ');
-
-        foreach($data as &$item)
-            $item['path'] = substr( $item['path'], strlen(_ROOT_)+1);
-
-        $this->songs = $data;
-    }
-
-
-    public function getTitle()
-    {
-        return $this->title;
-    }
 }
