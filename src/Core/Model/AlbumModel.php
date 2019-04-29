@@ -20,11 +20,8 @@ class AlbumModel
     public $songs = array();
 
     public $images = array();
-<<<<<<< HEAD
      
     public $artist_name;
-=======
->>>>>>> 955cec4912be5f1de4dc91a1a5d511d4659da701
 
     public $deleted;
 
@@ -42,15 +39,11 @@ class AlbumModel
             $this->title = $data['title'];
             $this->dirname = $data['dirname'];
             $this->id_artist = $data['id_artist'];
-<<<<<<< HEAD
             $this->artist_name = $data['artist_name'];
-=======
->>>>>>> 955cec4912be5f1de4dc91a1a5d511d4659da701
             $this->meta_year = $data['meta_year'];
             $this->deleted = $data['deleted'];
             $this->date_add = $data['date_add'];
             $this->date_upd = $data['date_upd'];
-<<<<<<< HEAD
             $this->songs = $data['songs'];
 
         }
@@ -81,7 +74,6 @@ class AlbumModel
 
     public function getTitle()
     {
-=======
 
             $this->setSongs();
         }
@@ -100,7 +92,6 @@ class AlbumModel
 
     public function getTitle()
     {
->>>>>>> 955cec4912be5f1de4dc91a1a5d511d4659da701
         return $this->title;
     }
 }
