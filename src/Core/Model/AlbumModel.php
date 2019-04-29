@@ -74,9 +74,7 @@ class AlbumModel
 
     public function getTitle()
     {
-
-            $this->setSongs();
-        }
+        return $this->title;
     }
 
     public function setSongs()
