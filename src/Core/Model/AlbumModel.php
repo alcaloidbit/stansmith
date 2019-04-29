@@ -3,6 +3,7 @@
 namespace StanSmith\Core\Model;
 
 use \StanSmith\Core\Db;
+use \StanSmith\Core\Image;
 
 class AlbumModel
 {
@@ -60,8 +61,8 @@ class AlbumModel
 
     public function setImages()
     {
-        $data = Db::getInstance()->select('SELECT * FROM `image` WHERE `id_album` = '.$this->id_album.''); 
-        $this->images = $data;
+        $id_image = Db::getInstance()->getValue('SELECT `id_image` FROM `image` WHERE `id_album` = '.$this->id_album.' LIMIT 0,1  '); 
+        $this->images = new Image($id_image);
     }
      
     public function setArtistName()

@@ -49,20 +49,29 @@
       </div>
     </div>
     <div class="row">
-        <div class="col s12 m8">
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Cover</th>
-                <th>Year</th>
-                <th>Date Add</th>
-              </tr>
-            </thead>
-            <?php echo $content;?>
-          </table>
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+                <h4 class="card-title">Albums</h4>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Year</th>
+                  <th>Date Add</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php echo $content;?>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
   </div>
   <footer>

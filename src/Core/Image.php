@@ -1,7 +1,8 @@
 <?php
 
 
-namespace StanSmith\Image;
+namespace StanSmith\Core;
+use \StanSmith\Core\ObjectModel;
 
 class Image extends ObjectModel
 {

@@ -26,6 +26,7 @@ class AlbumRepository
     }
 
 
+    
     public function find($id_album)
     {
         $stmt = $this->connection->prepare('
