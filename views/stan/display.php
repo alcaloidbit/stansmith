@@ -1,5 +1,5 @@
 <?php
-//d($albums);
+
 $html='';
 function formatTableRow($obj) {
     $row = '<tr>'.

@@ -5,6 +5,8 @@
 sftp-config.json
 .DS_Store
 tags
+tags.lock
+tags.temp
 *.jpg
 *.png
 *.gif
