@@ -58,6 +58,7 @@
             <table>
               <thead>
                 <tr>
+                  <th>id_album</th>
                   <th>Cover</th>
                   <th>Title</th>
                   <th>Artist</th>
