@@ -1,8 +1,10 @@
 <?php
 
+
 $html='';
 function formatTableRow($obj) {
     $row = '<tr>'.
+        '<td>'.$obj->id_album.'</td>'.
         '<td><img src="images/thumbnails/'.$obj->images->id.'_thumb'.$obj->images->extension.'" alt="">'.'</td>'.
         '<td>'.$obj->title.'</td>'.
         '<td>'.$obj->artist_name.'</td>'.
