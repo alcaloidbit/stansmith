@@ -4,6 +4,7 @@ namespace StanSmith\Controller;
 
 use \StanSmith\Core\Controller;
 use \StanSmith\Core\Repository\AlbumRepository;
+use \StanSmith\Core\Link;
 
 
 class StanController extends Controller
@@ -14,9 +15,10 @@ class StanController extends Controller
 
     public function display()
     {
+        $link = new Link();
         $repo = new AlbumRepository();
         $albums = $repo->findAll();
 
-        $this->renderView(array('albums' => $albums)); 
+        $this->renderView(array('link' => $link, 'albums' => $albums)); 
     }
 }
