@@ -1,6 +1,34 @@
+
+    <div class="row">
+      <div class="nav-wrapper">
+        <div class="col s12">
+           <a href="#!" class="breadcrumb">Home</a>
+           <a href="#!" class="breadcrumb">Albums</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+                <h4 class="card-title">Albums</h4>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>id_album</th>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Year</th>
+                  <th>Date Add</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+
 <?php
-
-
 $html='';
 function formatTableRow($obj, $link) {
   $row = '<tr>'.
@@ -9,7 +37,8 @@ function formatTableRow($obj, $link) {
     '<td>'.$obj->title.'</td>'.
     '<td>'.$obj->artist_name.'</td>'.
     '<td>'.'</td>'.
-    '<td>'.$obj->date_add.'</td>'.
+    '<td>'.date("d/m/Y", strtotime($obj->date_add)).'</td>'.
+    '<td><a class="btn waves-effect waves-light" href=""> <i class="material-icons left">edit</i>Edit</a></td>'.
     '</tr>';
   return $row;
 }
@@ -18,3 +47,10 @@ foreach($albums as $obj) {
   $html .= formatTableRow($obj, $link);
 }
 echo $html;
+?>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

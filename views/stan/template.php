@@ -20,7 +20,7 @@
     <div class="brand-sidebar">
       <h1 class="logo-wrapper">
         <a class="brand-logo" href="#">
-          <img src="skin/S.png" alt="">
+          <img src="http://176.31.245.123/stansmith/skin/S.png" alt="">
           <span class="logo-text ">Stansmith</span>
         </a>
       </h1>
@@ -41,38 +41,16 @@
   </aside>
   <div id="main">
     <div class="row">
-      <div class="nav-wrapper">
-        <div class="col s12">
-           <a href="#!" class="breadcrumb">Home</a>
-           <a href="#!" class="breadcrumb">Albums</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-title">
-                <h4 class="card-title">Albums</h4>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>id_album</th>
-                  <th>Cover</th>
-                  <th>Title</th>
-                  <th>Artist</th>
-                  <th>Year</th>
-                  <th>Date Add</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php echo $content;?>
-              </tbody>
-            </table>
+        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+             <a href="#!" class="breadcrumb">Home</a>
+             <a href="#!" class="breadcrumb">Albums</a>
           </div>
         </div>
-      </div>
+      </nav>
+      <?php echo $content;?>
     </div>
   </div>
   <footer>

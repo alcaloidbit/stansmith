@@ -3,6 +3,7 @@
 /music/
 /public/
 sftp-config.json
+settings.inc.php
 .DS_Store
 tags
 tags.lock

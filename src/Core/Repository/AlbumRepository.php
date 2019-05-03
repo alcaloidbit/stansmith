@@ -25,8 +25,6 @@ class AlbumRepository
         );
     }
 
-
-    
     public function find($id_album)
     {
         $stmt = $this->connection->prepare('
@@ -44,7 +42,6 @@ class AlbumRepository
         $object->setImages();
         return $object;
     }
-
 
     public function findAll($order_by='id_album', $order_way='DESC', $start=0, $limit=12)
     {
@@ -69,6 +66,7 @@ class AlbumRepository
             
         return $arrayOfObject;
     }
+
 }
 
 

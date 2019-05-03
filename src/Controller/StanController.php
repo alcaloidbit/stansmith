@@ -21,4 +21,13 @@ class StanController extends Controller
 
         $this->renderView(array('link' => $link, 'albums' => $albums)); 
     }
+
+    public function updateAlbum() 
+    {
+        $repository = new AlbumRepository();
+        $album = $repository->find($this->request->getValue('id_album'));
+        // d($album);
+        $this->renderView(array('album'=>$album));
+
+    }
 }
