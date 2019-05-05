@@ -9,25 +9,27 @@ use \StanSmith\Core\Link;
 
 class StanController extends Controller
 {
+    public $data = array();
+
     public function __construct()
     {
+        $this->data['link'] = new Link();
     }
 
     public function display()
     {
-        $link = new Link();
         $repo = new AlbumRepository();
-        $albums = $repo->findAll();
+        $this->data['albums'] = $repo->findAll(); 
 
-        $this->renderView(array('link' => $link, 'albums' => $albums)); 
+        $this->renderView($this->data); 
     }
 
     public function updateAlbum() 
     {
         $repository = new AlbumRepository();
         $album = $repository->find($this->request->getValue('id_album'));
-        // d($album);
-        $this->renderView(array('album'=>$album));
-
+        $this->data['album'] = $album;
+            
+        $this->renderView($this->data);
     }
 }

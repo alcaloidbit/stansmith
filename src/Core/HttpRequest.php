@@ -38,7 +38,8 @@ class HTTPRequest
 	 */
 	public function paramExists( $key )
 	{
-		return isset($_POST[$key]) ? true : (isset($_GET[$key]) ? true : false);
+		// return isset($_POST[$key]) ? true : (isset($_GET[$key]) ? true : false);
+                return array_key_exists($key, $_POST) ? true : (array_key_exists($key, $_GET) ? true : false);
 	}
 
 

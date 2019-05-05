@@ -2,15 +2,8 @@
 
 @ini_set('display_errors', 'on');
 
-// include dirname(__FILE__).'/../models/autoload.class.php';
 include dirname(__FILE__).'/settings.inc.php';
 include dirname(__FILE__).'/../vendor/autoload.php';
-
-// include getID3() library (can be in a different directory if full path is specified)
-// include dirname(__FILE__).'/../getID3-master/getid3/getid3.php';
-
-
-// Autoloader::register();
 
 define('_ROOT_', realpath( dirname(__FILE__).'/..'));
 
@@ -19,13 +12,14 @@ define('_CONTROLLERS_', _ROOT_.'/src/Controller/');
 define('_VIEWS_', _ROOT_.'/views/');
 define('_ADMIN_VIEWS_', _VIEWS_.'/admin/');
 
-
-
 define('_AUDIO_', _ROOT_.'/music');
 define('_AUDIO_TMP_', _ROOT_.'/files');
 define('_AUDIO_PUBLIC_', _ROOT_.'/public');
 define('_IMAGE_', _ROOT_.'/images');
-define('_BASE_URI_', 'http://176.31.245.123/stansmith/' );
+
+
+define('_MEDIA_BASE_URI_', 'http://176.31.245.123/stansmith/' );
+define('_BASE_URI_', 'http://local.stansmith.io/' );
 
 
 if (!function_exists('getimagesizefromstring')) {

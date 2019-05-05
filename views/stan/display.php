@@ -1,14 +1,6 @@
 
-    <div class="row">
-      <div class="nav-wrapper">
-        <div class="col s12">
-           <a href="#!" class="breadcrumb">Home</a>
-           <a href="#!" class="breadcrumb">Albums</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
+    <div class="col s12">
+      <div class="container">
         <div class="card">
           <div class="card-content">
             <div class="card-title">
@@ -38,7 +30,7 @@ function formatTableRow($obj, $link) {
     '<td>'.$obj->artist_name.'</td>'.
     '<td>'.'</td>'.
     '<td>'.date("d/m/Y", strtotime($obj->date_add)).'</td>'.
-    '<td><a class="btn waves-effect waves-light" href=""> <i class="material-icons left">edit</i>Edit</a></td>'.
+    '<td><a class="btn waves-effect waves-light" href="'.$link->getAlbumLink($obj->id_album).'"> <i class="material-icons left">edit</i>Edit</a></td>'.
     '</tr>';
   return $row;
 }
@@ -50,7 +42,7 @@ echo $html;
 ?>
                 </tbody>
             </table>
-          </div>
-        </div>
-      </div>
-    </div>
+          </div><!--/.card-content -->
+        </div><!--/.card -->
+      </div><!--/.container -->
+    </div><!--/.col.s12 -->

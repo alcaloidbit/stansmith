@@ -12,7 +12,7 @@
 							{
 								echo '<div class="col-lg-6 img-wrapper">';
 								foreach ($album->images  as $key => $image)
-									echo '<img src="'._BASE_URI_.'images/'.$image['id_image'].$image['extension'].'"  class="img-responsive"/>';
+									echo '<img src="'._MEDIA_BASE_URI_.'images/'.$image['id_image'].$image['extension'].'"  class="img-responsive"/>';
 								echo '</div>';
 							}
 						?>

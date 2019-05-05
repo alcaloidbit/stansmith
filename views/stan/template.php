@@ -12,21 +12,21 @@
 <body>
   <header class="top-bar">
     <div class="navbar navbar-fixed">
-      <nav class="navbar-main no-shadow">
+      <nav class="navbar-main no-shadow gradient-45deg-indigo-purple">
       </nav>
     </div>
   </header>
   <aside class="sidenav-main">
     <div class="brand-sidebar">
       <h1 class="logo-wrapper">
-        <a class="brand-logo" href="#">
+        <a class="brand-logo" href="<?php echo $link->getBaseLink() ?>">
           <img src="http://176.31.245.123/stansmith/skin/S.png" alt="">
-          <span class="logo-text ">Stansmith</span>
+          <span class="logo-text">Stansmith</span>
         </a>
       </h1>
     </div>
     <ul class="sidenav sidenav-fixed">
-      <li><a class="wave" href="">
+      <li><a class="wave" href="<?php echo $link->getPageLink(array('controller' => 'stan', 'action' => 'display' ));?>">
         <i class="material-icons">album</i>
         <span class="menu-title">Albums</span>
         <span class="badge pill orange float-right">43</span>
@@ -41,16 +41,18 @@
   </aside>
   <div id="main">
     <div class="row">
-        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-      <nav>
-        <div class="nav-wrapper">
-          <div class="col s12">
-             <a href="#!" class="breadcrumb">Home</a>
-             <a href="#!" class="breadcrumb">Albums</a>
+      <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+        <div id="breadcrumbs-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+               <a href="#!" class="breadcrumb">Home</a>
+               <a href="#!" class="breadcrumb">Albums</a>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-      <?php echo $content;?>
+        <?php echo $content;?>
     </div>
   </div>
   <footer>
