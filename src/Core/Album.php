@@ -91,7 +91,7 @@ class Album extends ObjectModel
     }
 
 
-    public function getCoverImage($id_album)
+    public static function getCoverImage($id_album)
     {
         return Db::getInstance()->getRow('SELECT `id_image`, `extension` FROM `image` WHERE `id_album` = '.$id_album.'');
     }
