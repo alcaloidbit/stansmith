@@ -13,6 +13,12 @@
   <header class="top-bar">
     <div class="navbar navbar-fixed">
       <nav class="navbar-main no-shadow gradient-45deg-indigo-purple">
+        <div class="nav-wrapper">
+          <div class="header-search-wrapper"></div>
+            <ul class="navbar-list right">
+            <li><a class="showfront waves-effect waves-block" href="<?php echo $link->getPageLink(array('controller'=>'index'));?>" ><i class="material-icons">exit_to_app</i></a></li>
+            </ul>
+        </div>
       </nav>
     </div>
   </header>
@@ -52,7 +58,9 @@
             </div>
           </div>
         </div>
+
         <?php echo $content;?>
+
     </div>
   </div>
   <footer>

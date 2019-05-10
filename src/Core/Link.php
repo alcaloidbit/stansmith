@@ -13,16 +13,16 @@ class Link
     public function getImageLink($id_image, $extension, $format = null)
     {
         if ($format == 'thumb')
-            return _MEDIA_BASE_URI_.'images/thumbnails/'.$id_image.'_thumb'.$extension ;
+              return _MEDIA_BASE_URI_.'images/thumbnails/'.$id_image.'_thumb'.$extension ;
         else if ($format == 'small')
             return _MEDIA_BASE_URI_.'images/small/'.$id_image.'_small'.$extension ;
         else
-            return _MEDIA_BASE_URI_/'images/'/$id_image.$extension;
+            return _MEDIA_BASE_URI_.'/images/'.$id_image.$extension;
     }    
 
     public function getBaseLink()
     {
-        return _BASE_URI_;         
+         return _BASE_URI_;         
     }
 
     public function getPageLink($params) 

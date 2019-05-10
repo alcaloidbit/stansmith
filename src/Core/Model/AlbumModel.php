@@ -49,6 +49,7 @@ class AlbumModel
         }
     }
 
+
     public function setSongs()
     {
         $data = Db::getInstance()->select('SELECT * FROM `song` WHERE `id_album` = '.$this->id_album.' ORDER BY `meta_track_number`, `title` ');
@@ -67,7 +68,6 @@ class AlbumModel
      
     public function setArtistName()
     {
-        
         $this->artistName = Db::getInstance()->getValue('SELECT `name` FROM `artist` WHERE `id_artist` = '.(int)$this->id_artist.'');
     }
 

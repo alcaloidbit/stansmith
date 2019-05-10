@@ -5,4 +5,5 @@ $router  = new StanSmith\Core\Router();
 $router->route();
 
 
+
 ?>

@@ -12,7 +12,7 @@ abstract Class Controller
 
     protected $view;
 
-    public function setRequest( \StanSmith\Core\HttpRequest $request )
+    public function setRequest( HttpRequest $request )
     {
         $this->request = $request;
     }

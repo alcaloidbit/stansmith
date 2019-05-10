@@ -10,7 +10,7 @@ class Album extends ObjectModel
     /** @var string Title */
     public $title;
 
-    /**@var int Id_artist */
+    /** @var int id_artist */
     public $id_artist;
 
     /** @var string dirname */
@@ -22,10 +22,8 @@ class Album extends ObjectModel
 
     public $meta_year;
 
-    /** @var string Object creation date */
     public $date_add;
 
-    /** @var string Object last modification date */
     public $date_upd;
 
     public static $definition = array(
@@ -53,6 +51,10 @@ class Album extends ObjectModel
         }
     }
 
+    /**
+     * setArtistName
+     *
+     */
     public function setArtistName()
     {
         $this->artistName = Db::getInstance()->getValue('SELECT `name` FROM `artist` WHERE `id_artist` = '.(int)$this->id_artist.'');
@@ -72,40 +74,75 @@ class Album extends ObjectModel
 
     public function setImages()
     {
-        $data = Db::getInstance()->select('SELECT * FROM `image` WHERE `id_album` = '.$this->id.'');
-        $this->images = $data;
+        $data = Db::getInstance()->getValue('SELECT `id_image` FROM `image` WHERE `id_album` = '.$this->id.' LIMIT 0,1 ');
+        $this->images = new Image($data);
+    }
+
+    public static function getAlbumProperties(&$row)
+    {
+        $row['artist_name'] = Album::getArtistName($row['id_artist']);
+        $row['image'] = Album::getCoverImage($row['id_album']);
+        return $row;
+    } 
+
+    public static function getArtistName($id_artist)
+    {
+        return Db::getInstance()->getValue('SELECT `name` FROM `artist` WHERE `id_artist` = '.$id_artist.'');
+    }
+
+
+    public function getCoverImage($id_album)
+    {
+        return Db::getInstance()->getRow('SELECT `id_image`, `extension` FROM `image` WHERE `id_album` = '.$id_album.'');
     }
 
     /**
-     *  9 sept 2016 ajout de l'attribut deleted dans la Classe Album
+     * getAlbums
+     *
+     * @param int $start Start number
+     * @param int $limit Number of Album to return
+     * @param string $order_by Field for ordering
+     * @param string $order_way Way for ordering
+     * @param int $id_artist Only artist's albums
+     * @return array Albums Details 
      */
-    public static function getAlbums( $start, $limit, $order_by = 'id_album' , $order_way = 'DESC', $id_artist = false)
+    public static function getAlbums($start, $limit, $order_by = 'id_album' , $order_way = 'DESC', $id_artist = false)
     {
-        return Db::getInstance()->select('SELECT * FROM `album` WHERE `deleted` IS NULL AND `id_album` IN (SELECT `id_album` FROM `image`)'.
+        $results = Db::getInstance()->select(
+            'SELECT * FROM `album` WHERE `deleted` IS NULL 
+            AND `id_album` IN (SELECT `id_album` FROM `image`)'.
             ( $id_artist ? 'AND `id_artist` = '.$id_artist.'' : '' )
             .' ORDER BY `'.$order_by.'` '. $order_way .
-            ( $limit > 0 ? ' LIMIT '.(int)($start).','.(int)($limit) : '') .'');
+            ( $limit > 0 ? ' LIMIT '.(int)($start).','.(int)($limit) : '') .''
+        );
+
+        foreach($results as &$album) {
+            Album::getAlbumProperties($album);
+        }
+
+        return $results;
     }
 
-    // VERY TEMPORARY
     public static function getAlbum($id_album)
     {
-        return Db::getInstance()->select('SELECT * FROM `album` WHERE `id_album` = '.$id_album.' ');
-
+        $results = Db::getInstance()->select('SELECT * FROM `album` WHERE `id_album` = '.$id_album.' ');
+        return $results;
     }
 
     public static function getAlbumsNbr()
     {
-        return Db::getInstance()->getValue('SELECT count(*) FROM `album` WHERE `deleted` IS NULL');
+        $results = Db::getInstance()->getValue('SELECT count(*) FROM `album` WHERE `deleted` IS NULL');
+        return $results;
     }
 
     public static function getIdImage($id_album)
     {
-        return Db::getInstance()->getValue('SELECT `id_image` FROM `image` WHERE `id_album` = '.$id_album.'' );
+        $results =  Db::getInstance()->getValue('SELECT `id_image` FROM `image` WHERE `id_album` = '.$id_album.'' );
+        return $results;
     }
 
 
-    public static function getAlbumsWithoutImage()
+    public static function getalbumswithoutimage()
     {
         $res = Db::getInstance()->select('SELECT * FROM album a
             LEFT JOIN artist b ON a.id_artist = b.id_artist
@@ -115,8 +152,6 @@ class Album extends ObjectModel
 
         return $res;
     }
-
-
 
     public function add( $autodate = true )
     {
@@ -134,9 +169,7 @@ class Album extends ObjectModel
         // $ent['songs'] = Db::getInstance()->select('SELECT * FROM song WHERE id_album = '.$ent['id_album'].'');
 
         return $res;
-
     }
-
 
     public static function existsInDB($dirname, $id_artist)
     {
@@ -158,6 +191,7 @@ class Album extends ObjectModel
         return $res;
     }
 
+
     public function delete()
     {
         $artist = new Artist($this->id_artist);
@@ -169,8 +203,7 @@ class Album extends ObjectModel
         $image->delete();
 
         parent::delete();
-    }
+    } 
 }
 
 
-// home/stansmith/public/BHC_test.m4a

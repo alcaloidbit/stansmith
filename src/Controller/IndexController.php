@@ -18,7 +18,7 @@ class IndexController extends Controller
     {
         if($this->request->paramExists('id_album'))
         {
-            $data['albums'] = \Album::getAlbum($this->request->getValue('id_album'));
+            $data['albums'] = Album::getAlbum($this->request->getValue('id_album'));
         }
         else
         {

@@ -4,6 +4,7 @@ namespace StanSmith\Controller;
 
 use \StanSmith\Core\Controller;
 use \StanSmith\Core\Repository\AlbumRepository;
+use \StanSmith\Core\Album;
 use \StanSmith\Core\Link;
 
 
@@ -19,17 +20,17 @@ class StanController extends Controller
     public function display()
     {
         $repo = new AlbumRepository();
-        $this->data['albums'] = $repo->findAll(); 
+        $albums = $repo->findAll(); 
 
+        $this->data['albums'] = Album::getAlbums(0, 100);
         $this->renderView($this->data); 
     }
 
     public function updateAlbum() 
     {
-        $repository = new AlbumRepository();
-        $album = $repository->find($this->request->getValue('id_album'));
+        $album = new Album($this->request->getValue('id_album'));
+//        d($album);
         $this->data['album'] = $album;
-            
         $this->renderView($this->data);
     }
 }
