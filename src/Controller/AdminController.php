@@ -17,8 +17,8 @@ class AdminController extends Controller
     {
         session_start();
         // d($_SESSION);
+    
     }
-
 
     public function addDiscogsRelease()
     {
@@ -140,10 +140,9 @@ class AdminController extends Controller
             $this->html .= '<ul class="subtree">';
             foreach ($releases as $key => $album) {
                 $album = new Album($album['id_album']);
-                d($album);
                 $this->html .= '<li  data-id_album = "'.$album->id.'"  class="album">
                     <div class="trigger">
-                    <img src="http://176.31.245.123/stansmith/images/thumbnails/'.$album->images[0]['id_image'].'_thumb'.$album->images[0]['extension'].'" />'.$album->title.'
+                    <img src="http://176.31.245.123/stansmith/images/thumbnails/'.$album->images->id.'_thumb'.$album->images->extension.'" />'.$album->title.'
                     </div>
                     <div class="action">
                     <span  data-id_album="'.$album->id.'" class="delete ion-ios-trash-outline"></span>
@@ -151,6 +150,7 @@ class AdminController extends Controller
                     <input type="text"  name="meta_year" value="' .$album->meta_year.'" class="form-control" >
                     <button class="btn btn-info btn-flat update_meta_year" data-id_album = "'.$album->id.'" type="button"><i class="fa fa-refresh"></i></button>
                     </div>';
+
 
                 $this->html .= '<ul class="subtree">';
                 foreach($album->songs as $s)
@@ -162,14 +162,13 @@ class AdminController extends Controller
         $this->html .= '</ul>';
 
         return $this->html;
+        
     }
 
     public function display()
     {
         if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) 
         {
-
-            $data['albums'] = $this->getList();
             $data['artist_nbr'] = Artist::getArtistsNbr();
             $data['albums_nbr'] = Album::getAlbumsNbr();
 
@@ -183,7 +182,7 @@ class AdminController extends Controller
 
         } else {
 
-            header('Location: http://176.31.245.123/stansmith/index.php?controller=login');
+            header('Location: http://local.stansmith.io/index.php?controller=login');
             // return  false;
         }
 
@@ -708,6 +707,7 @@ class AdminController extends Controller
 
         echo $json;
     }
+
 }
 
 

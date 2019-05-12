@@ -44,7 +44,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="http://176.31.245.123/stansmith/?controller=login&action=checkLogin" method="post">
+    <form action="http://local.stansmith.io/index.php?controller=login&action=checkLogin" method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

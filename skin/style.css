@@ -120,3 +120,21 @@ span.badge.pill {
 #breadcrumbs-wrapper {
   padding-top: 2%;
 }
+
+.card-discogs .input-field>label {
+  color: #fff;
+}
+
+#ds_album_title, 
+#ds_album_title.valid,
+#ds_artist_name,
+#ds_artist_name.valid {
+  color: #fff;
+  border-bottom: #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+
+#ds_album_title:focus+label,
+#ds_artist_name:focus+label {
+  color: #fff;
+}

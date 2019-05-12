@@ -51,10 +51,6 @@ class Album extends ObjectModel
         }
     }
 
-    /**
-     * setArtistName
-     *
-     */
     public function setArtistName()
     {
         $this->artistName = Db::getInstance()->getValue('SELECT `name` FROM `artist` WHERE `id_artist` = '.(int)$this->id_artist.'');
@@ -135,30 +131,12 @@ class Album extends ObjectModel
         return $results;
     }
 
-    public static function getIdImage($id_album)
-    {
-        $results =  Db::getInstance()->getValue('SELECT `id_image` FROM `image` WHERE `id_album` = '.$id_album.'' );
-        return $results;
-    }
-
-
-    public static function getalbumswithoutimage()
-    {
-        $res = Db::getInstance()->select('SELECT * FROM album a
-            LEFT JOIN artist b ON a.id_artist = b.id_artist
-            WHERE a.id_album not in (select id_album from image)' );
-        foreach( $res as &$ent )
-            $ent['songs'] = Db::getInstance()->select('SELECT * FROM song WHERE id_album = '.$ent['id_album'].'');
-
-        return $res;
-    }
-
     public function add( $autodate = true )
     {
         parent::add( $autodate );
     }
 
-
+    /** AdminController |202 col 24 */
     public static function getAlbumsFull()
     {
         $res = Db::getInstance()->select('SELECT a.id_album, a.title, a.dirname, a.id_artist, b.name  FROM album a

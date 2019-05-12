@@ -26,7 +26,7 @@ function formatTableRow($album, $link) {
     '<td><img src="'.$link->getImageLink($album['image']['id_image'], $album['image']['extension'], 'thumb').'" alt="">'.'</td>'.
     '<td>'.$album['title'].'</td>'.
     '<td>'.$album['artist_name'].'</td>'.
-    '<td>'.'</td>'.
+    '<td>'.$album['meta_year'].'</td>'.
     '<td>'.date("d/m/Y", strtotime($album['date_add'])).'</td>'.
     '<td><a class="btn waves-effect waves-light" href="'.$link->getAlbumLink($album['id_album']).'"> <i class="material-icons left">edit</i>Edit</a></td>'.
     '</tr>';

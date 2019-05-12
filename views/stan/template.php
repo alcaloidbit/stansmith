@@ -35,7 +35,7 @@
       <li><a class="wave" href="<?php echo $link->getPageLink(array('controller' => 'stan', 'action' => 'display' ));?>">
         <i class="material-icons">album</i>
         <span class="menu-title">Albums</span>
-        <span class="badge pill orange float-right">43</span>
+        <span class="badge pill light-blue darken-5 float-right"><?php echo $totalReleases;?></span>
         </a>
       </li>
       <li><a class="wave" href="">
@@ -65,6 +65,6 @@
   </div>
   <footer>
   </footer>
-<script src="skin/materialize/js/materialize.min.js></script>
+<script src="skin/materialize/js/materialize.min.js"></script>
 </body>
 </html>

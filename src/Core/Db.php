@@ -199,6 +199,7 @@ class Db {
     {
         if (!$data)
             return true;
+
         // the table name should be protected ( see bsSQL in PrestaShop )
         $sql = 'UPDATE `'.bqSQL($table).'` SET ';
         foreach ($data as $key => $value)
@@ -208,7 +209,7 @@ class Db {
             if ($value['type'] == 'sql')
                 $sql .= '`'.bqSQL($key)."` = {$value['value']},";
             else
-                $sql .= ($value['value'] === '' || is_null($value['value'])) ? '`'.bqSQL($key).'` = NULL,' : '`'.bqSQL($key).'` = \''.mysql_real_escape_string($value['value']).'\',';
+                $sql .= ($value['value'] === '' || is_null($value['value'])) ? '`'.bqSQL($key).'` = NULL,' : '`'.bqSQL($key)."` = '{$value['value']}',";
         }
         $sql = rtrim($sql, ',');
 
@@ -216,7 +217,6 @@ class Db {
             $sql .= ' WHERE '.$where;
         if ($limit)
             $sql .= ' LIMIT '.(int)$limit;
-
 
         return  (bool)$this->link->query($sql);
     }

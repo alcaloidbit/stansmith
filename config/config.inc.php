@@ -56,6 +56,7 @@ if (!defined('_MAGIC_QUOTES_GPC_'))
 	define('_MAGIC_QUOTES_GPC_',         get_magic_quotes_gpc());
 
 
+use \StanSmith\Core\Db;
 /**
  * Sanitize data which will be injected into SQL query
  *
@@ -68,7 +69,7 @@ function pSQL($string, $htmlOK = false)
 	// Avoid thousands of "Db::getInstance()"...
 	static $db = false;
 	if (!$db)
-		$db = Db::getInstance();
+	    $db = Db::getInstance();
 
 	return $db->escape($string, $htmlOK);
 }

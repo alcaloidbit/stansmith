@@ -38,11 +38,11 @@ class LoginController extends Controller
 			setcookie('pass', $password 	, time() + 365*24*3600, null, null, false, true); 
 
 
-			header('location: http://176.31.245.123/stansmith/index.php?controller=admin');
+			header('location: http://local.stansmith.io/index.php?controller=admin');
 
 		}
 		else
-			header('location: http://176.31.245.123/stansmith/index.php?controller=login');
+			header('location: http://local.stansmith.io/index.php?controller=login');
 	
 	}
 }
