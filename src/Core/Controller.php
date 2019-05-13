@@ -33,7 +33,6 @@ abstract Class Controller
 
     public abstract function display();
 
-
     protected function renderView( $data = array() )
     {
         $controllerClass = get_Class( $this );

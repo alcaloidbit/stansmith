@@ -138,3 +138,16 @@ span.badge.pill {
 #ds_artist_name:focus+label {
   color: #fff;
 }
+
+#drop {
+  padding: 40px 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 20px dotted rgba(225, 20, 210, 0.40);
+  border-radius: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  color: #7f858a;
+}

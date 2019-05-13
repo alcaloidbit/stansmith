@@ -43,13 +43,10 @@ class View
     {
         if( file_exists( $this->contentFile ) )
         {
-            // d($this->vars);
-            // les var sont disponible
-            extract ( $this->vars );
+           extract ( $this->vars );
 
             ob_start();
             require $this->contentFile;
-            // inclusion display.php content 
             $content  =  ob_get_clean();
 
             ob_start();

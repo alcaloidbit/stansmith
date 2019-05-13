@@ -3,7 +3,6 @@
 namespace StanSmith\Controller;
 
 use \StanSmith\Core\Controller;
-use \StanSmith\Core\Repository\AlbumRepository;
 use \StanSmith\Core\Album;
 use \StanSmith\Core\Link;
 use \StanSmith\Core\DiscogsClient;
@@ -21,6 +20,7 @@ class StanController extends Controller
 
     public function display()
     {
+        $this->data['page_name'] = 'List Albums';
         $this->data['albums'] = Album::getAlbums(0, 100);
         $this->renderView($this->data); 
     }
@@ -39,8 +39,9 @@ class StanController extends Controller
                     $this->data['message'] = 'error';
             }
         }
-
+        $this->data['page_name'] = 'Edit Album';
         $this->data['album'] = $album;
+        
         $this->renderView($this->data);
     }
 
@@ -50,11 +51,15 @@ class StanController extends Controller
          
         $data['release_title']=$this->request->getValue('ds_release_title');
         $data['artist']=$this->request->getValue('ds_artist_name');
-       //d($data);
         
         $result = $this->searchDiscogs($data);
-        $this->data['discogs_results'] = json_decode($result);
-        $this->renderView($this->data);
+
+        if($this->request->getValue('ajax')) {
+            echo $result; 
+        } else {
+            $this->data['discogs_results'] = json_decode($result);
+            $this->renderView($this->data);
+        }
 
     }
     
