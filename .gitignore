@@ -4,6 +4,7 @@
 /public/
 sftp-config.json
 settings.inc.php
+config.inc.php
 .DS_Store
 tags
 tags.lock
