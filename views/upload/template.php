@@ -70,7 +70,15 @@
   </div>
   <footer>
   </footer>
-<script src="skin/materialize/js/materialize.min.js"></script>
-<script src="skin/ui.js"></script>
-</body>
-</html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script> 
+  <script src="skin/materialize/js/materialize.min.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/vendor/jquery.ui.widget.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.iframe-transport.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.fileupload.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.fileupload-ui.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.fileupload-process.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.fileupload-audio.js"></script>
+  <script src="skin/jQuery-File-Upload-9.30.0/js/jquery.fileupload-validate.js"></script>
+  <script src="skin/mini-upload-form/assets/js/jquery.knob.js"></script>
+  <script src="skin/ui.js"></script>
+  </body></html>

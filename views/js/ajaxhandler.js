@@ -8,7 +8,7 @@ $(window).load(function(){
 		e.preventDefault();
 		
 		var text = $(this).attr('rel');
-		var match = text.match(/album_(\d+)/) // On recupere l id album
+		var match = text.match(/album_(\d+)/); 
 		$.ajax({
 			url: 'index.php?controller=test&action=detail',
 			type: 'GET',

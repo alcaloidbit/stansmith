@@ -56,7 +56,6 @@ if (!defined('_MAGIC_QUOTES_GPC_'))
 	define('_MAGIC_QUOTES_GPC_',         get_magic_quotes_gpc());
 
 
-use \StanSmith\Core\Db;
 /**
  * Sanitize data which will be injected into SQL query
  *
